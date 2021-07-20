@@ -6,10 +6,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/jamestrew/.oh-my-zsh"
+export ZSH="/home/jt/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -81,7 +81,8 @@ plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
-    )
+    fzf
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -115,5 +116,13 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-export EDITOR=nvim
-export VISUAL=nvim
+
+export EDITOR='nvim'
+
+
+FD_OPTIONS="--follow --hidden --exclude .cache --exclude .git --exclude node_modules --exclude yay"
+export FZF_DEFAULT_COMMAND="fd --type f --type l $FD_OPTIONS"
+export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
+export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
+
+alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"

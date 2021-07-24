@@ -82,6 +82,8 @@ plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
     fzf
+    pip
+    rand-quote
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -126,3 +128,4 @@ export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
 export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
 
 alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
+alias chtshsh="cht.sh --shell"

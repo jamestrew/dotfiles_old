@@ -1,0 +1,8 @@
+new_tab nvim
+cd ~/Documents/projects/sourcetype
+launch zsh
+
+new_tab react
+cd ~/Documents/projects/sourcetype
+launch zsh
+

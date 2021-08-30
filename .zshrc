@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/go/src:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/jt/.oh-my-zsh"
@@ -129,5 +129,5 @@ export FZF_ALT_C_COMMAND="fd --base-directory ~ --type d $FD_OPTIONS"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 alias chtshsh="cht.sh --shell"
 alias py="python"
-alias ls="exa -l --icons"
+alias ls="exa -la --icons"
 alias cat="bat"
